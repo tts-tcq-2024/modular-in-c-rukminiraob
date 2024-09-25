@@ -1,3 +1,5 @@
+#include "color_pair.h"
+
 // Print a formatted header for the reference manual
 void PrintManualHeader() {
     printf("---------------------------------------------------\n");
