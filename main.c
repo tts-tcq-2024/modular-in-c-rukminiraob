@@ -1,4 +1,4 @@
-#include <stdio.h>
+/* #include <stdio.h>
 #include <assert.h> 
 
 enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
@@ -75,4 +75,4 @@ int main() {
     testPairToNumber(VIOLET, SLATE, 25);
 
     return 0;
-}
+} */
