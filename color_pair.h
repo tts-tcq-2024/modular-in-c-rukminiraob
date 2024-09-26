@@ -13,8 +13,8 @@ enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
 extern const char* MajorColorNames[];
 extern const char* MinorColorNames[];
 
-extern int numberOfMajorColors;
-extern int numberOfMinorColors;
+extern const int numberOfMajorColors;
+extern const int numberOfMinorColors;
 
 // Structure to hold a color pair
 typedef struct {
