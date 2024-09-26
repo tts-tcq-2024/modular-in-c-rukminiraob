@@ -1,4 +1,3 @@
-// color_pair.c
 #include "color_pair.h"
 
 // Definitions for major and minor color names
