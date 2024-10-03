@@ -10,5 +10,4 @@ int main() {
     PrepareColorCodingManual(buffer);
     printf("%s", buffer); // print the prepared data
     return 0;
-    return 0;
 }
