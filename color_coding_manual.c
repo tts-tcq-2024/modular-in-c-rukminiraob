@@ -20,9 +20,3 @@ void PrepareColorCodingManual(char* buffer) {
     strcat(buffer, "---------------------------------------------------\n");
 }
 
-int main() {
-    char buffer[MAX_BUFFER_SIZE] = ""; // to store the entire manual
-    PrepareColorCodingManual(buffer);
-    printf("%s", buffer); // print the prepared data
-    return 0;
-}
