@@ -1,4 +1,3 @@
-// main.c
 #include "color_pair.h"
 
 int main() {
