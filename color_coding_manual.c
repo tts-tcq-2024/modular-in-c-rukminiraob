@@ -1,8 +1,6 @@
 #include "color_pair.h"
 #include <string.h> // for strcat
 
-#define MAX_BUFFER_SIZE 1024
-
 // Prepare a color coding manual in a string format instead of directly printing
 void PrepareColorCodingManual(char* buffer) {
     strcat(buffer, "---------------------------------------------------\n");
