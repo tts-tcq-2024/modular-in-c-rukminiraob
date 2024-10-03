@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-#define MAX_BUFFER_SIZE 1024
+#define MAX_BUFFER_SIZE 2048
 
 // Enumerations for major and minor colors
 enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
