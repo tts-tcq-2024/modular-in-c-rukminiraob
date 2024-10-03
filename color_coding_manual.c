@@ -1,7 +1,5 @@
-#include "color_pair.h"
-#include <string.h> // for strcat
+#include "color_coding_manual.h"
 
-// Prepare a color coding manual in a string format instead of directly printing
 void PrepareColorCodingManual(char* buffer) {
     strcat(buffer, "---------------------------------------------------\n");
     strcat(buffer, "| Pair Number | Major Color  | Minor Color  |\n");
@@ -9,10 +7,10 @@ void PrepareColorCodingManual(char* buffer) {
 
     for (int pairNumber = 1; pairNumber <= numberOfMajorColors * numberOfMinorColors; ++pairNumber) {
         ColorPair colorPair = GetColorFromPairNumber(pairNumber);
-        char row[128]; // temporary row storage
+        char row[128];
         snprintf(row, sizeof(row), "| %-12d | %-12s | %-12s |\n", 
                 pairNumber, MajorColorNames[colorPair.majorColor], MinorColorNames[colorPair.minorColor]);
-        strcat(buffer, row); // append row to buffer
+        strncat(buffer, row, MAX_BUFFER_SIZE - strlen(buffer) - 1);
     }
 
     strcat(buffer, "---------------------------------------------------\n");
