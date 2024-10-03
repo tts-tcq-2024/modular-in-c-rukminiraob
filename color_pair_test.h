@@ -1,14 +1,10 @@
-#include "color_pair_test.h"
-#include "color_coding_manual.h"
+#ifndef COLOR_PAIR_TEST_H
+#define COLOR_PAIR_TEST_H
 
-int main() {
-    testNumberToPair(4, WHITE, BROWN);
-    testNumberToPair(5, WHITE, SLATE);
-    testPairToNumber(BLACK, ORANGE, 12);
-    testPairToNumber(VIOLET, SLATE, 25);
-    
-    char buffer[MAX_BUFFER_SIZE] = ""; // to store the entire manual
-    PrepareColorCodingManual(buffer);
-    printf("%s", buffer); // print the prepared data
-    return 0;
-}
+#include "color_pair.h"
+
+// Test functions
+void testNumberToPair(int pairNumber, enum MajorColor expectedMajor, enum MinorColor expectedMinor);
+void testPairToNumber(enum MajorColor major, enum MinorColor minor, int expectedPairNumber);
+
+#endif // COLOR_PAIR_TEST_H
