@@ -1,30 +1,30 @@
 #include "color_pair.h"
 
-// Print a formatted header for the reference manual
-void PrintManualHeader() {
-    printf("---------------------------------------------------\n");
-    printf("| %-12s | %-12s | %-12s |\n", "Pair Number", "Major Color", "Minor Color");
-    printf("---------------------------------------------------\n");
-}
+#include "color_pair.h"
+#include <string.h> // for strcat
 
-// Print a row for a color pair, including its pair number and colors
-void PrintColorPairRow(int pairNumber, const char* majorColor, const char* minorColor) {
-    printf("| %-12d | %-12s | %-12s |\n", pairNumber, majorColor, minorColor);
-}
+#define MAX_BUFFER_SIZE 1024
 
-// Print a footer to complete the table format
-void PrintManualFooter() {
-    printf("---------------------------------------------------\n");
-}
+// Prepare a color coding manual in a string format instead of directly printing
+void PrepareColorCodingManual(char* buffer) {
+    strcat(buffer, "---------------------------------------------------\n");
+    strcat(buffer, "| Pair Number | Major Color  | Minor Color  |\n");
+    strcat(buffer, "---------------------------------------------------\n");
 
-// Function to print the entire 25-pair color coding manual in a table format
-void PrintColorCodingManual() {
-    PrintManualHeader(); // Start with the header
     for (int pairNumber = 1; pairNumber <= numberOfMajorColors * numberOfMinorColors; ++pairNumber) {
-        // Get the color pair corresponding to the pair number
         ColorPair colorPair = GetColorFromPairNumber(pairNumber);
-        // Print the row with pair number, major color, and minor color
-        PrintColorPairRow(pairNumber, MajorColorNames[colorPair.majorColor], MinorColorNames[colorPair.minorColor]);
+        char row[128]; // temporary row storage
+        snprintf(row, sizeof(row), "| %-12d | %-12s | %-12s |\n", 
+                pairNumber, MajorColorNames[colorPair.majorColor], MinorColorNames[colorPair.minorColor]);
+        strcat(buffer, row); // append row to buffer
     }
-    PrintManualFooter(); // End with the footer
+
+    strcat(buffer, "---------------------------------------------------\n");
+}
+
+int main() {
+    char buffer[MAX_BUFFER_SIZE] = ""; // to store the entire manual
+    PrepareColorCodingManual(buffer);
+    printf("%s", buffer); // print the prepared data
+    return 0;
 }
