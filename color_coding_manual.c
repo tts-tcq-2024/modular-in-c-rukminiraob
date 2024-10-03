@@ -1,6 +1,4 @@
 #include "color_pair.h"
-
-#include "color_pair.h"
 #include <string.h> // for strcat
 
 #define MAX_BUFFER_SIZE 1024
